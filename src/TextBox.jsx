@@ -1,11 +1,13 @@
-import { Html } from "@react-three/drei"
+import { Html } from "@react-three/drei";
 
-const TextBox = ({text}) => {
-  return (
+const TextBox = ({ text, position, isShowTxt }) => {
+  return isShowTxt ?  (
     <Html>
-    <p className="card">{text}</p>
+      <div className="card1">
+        <p>{text}</p>
+      </div>
     </Html>
-  )
-}
+  ): null;
+};
 
-export default TextBox
+export default TextBox;

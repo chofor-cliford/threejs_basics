@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
@@ -10,9 +12,10 @@ body,
   margin: 0;
   padding: 0;
   background: #87ceeb;
+  font: 1em/1.618 Inter, sans-serif;
 }
 
-.neo-brutalism-blue {
+/* .neo-brutalism-blue {
   background: #2b77e7;
   position: relative;
   border-radius: 10px;
@@ -22,19 +25,84 @@ body,
 }
 
 .card {
-  background: rgb(246, 246, 250);
-  background: linear-gradient(
-    90deg,
-    rgba(246, 246, 250, 1) 0%,
-    rgba(188, 177, 143, 1) 44%,
-    rgba(238, 244, 246, 1) 100%
-  );
-  border-radius: 10px;
-  position: relative;
-  border: #e0ca89;
-  font-size: 14px;
-  color: #44423c;
-  padding: 3px 20px;
-  word-wrap: break-word;
+  min-width: 300px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  max-width: 500px;
+  height: 300px;
+  padding: 35px;
+
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(15px);
+}
+p {
+  margin: 0;
 }
 
+p:not(:last-child) {
+  margin-bottom: 1.5em;
+} */
+
+
+.card1 {
+	position: relative;
+	width: 600px;
+	margin: auto;
+	padding: 1rem;
+	background-color: transparent;
+	background-image: linear-gradient(
+			-45deg,
+			transparent,
+			transparent 2%,
+			white 2%,
+			white 85%,
+			transparent,
+			85%,
+			transparent
+		),
+		linear-gradient(to bottom right, #2ad, #2ad 90%, transparent 90%);
+	background-position: top left, 0.2em 0.2em;
+	background-repeat: no-repeat;
+	filter: drop-shadow(0 0 15px #0005);
+}
+
+.card1::before,
+.card1::after {
+	position: absolute;
+	z-index: -1;
+	display: block;
+	width: 2rem;
+	height: 3rem;
+	content: "";
+	z-index: 0;
+	font-size: 8rem;
+	font-family: Georgia, Times, Garamond, serif;
+}
+
+.card1::before {
+	top: -2rem;
+	left: 1rem;
+}
+
+.card1::after {
+	bottom: -1rem;
+	right: 1rem;
+}
+
+.card1::before,
+.card1::after,
+.card1 h2 {
+	text-shadow: -2px 2px #fff, -1.5px 1.5px #fff, -1px 1px #fff, -0.5px 0.5px #fff;
+}
+
+p {
+	margin-block-start: 1rem;
+	text-indent: 2ch;
+}

@@ -11,13 +11,18 @@ const Model = (props) => {
  const { camera } = useThree();
 
  // Leva controls for camera position
- const { x, y, z } = useControls("Camera Rotation", {
-   x: { value: 0, min: 0, max: 100 },
-   y: { value: -2 * Math.PI, min: 0, max: 2 * Math.PI },
-   z: { value: 0, min: 0, max: 100 },
- });
+//  const { x, y, z } = useControls("Camera Rotation", {
+//    x: { value: 0, min: 0, max: 100 },
+//    y: { value: -2 * Math.PI, min: 0, max: 2 * Math.PI },
+//    z: { value: 0, min: 0, max: 100 },
+//  });
 
  // Animation variables
+ useFrame(() => {
+  if(groupRef.current){
+    groupRef.current.rotation.x = 0;
+  }
+ })
 
 
   return (
@@ -26,7 +31,7 @@ const Model = (props) => {
 <ambientLight intensity={2} />
 <Bird />
     <group {...props} dispose={null} scale={0.01} >
-      <group ref={groupRef} rotation={[0, 0.78,1]} userData={{ name: "RootNode" }}>
+      <group ref={groupRef} rotation={[0, Math.PI/2,1]} userData={{ name: "RootNode" }}>
         <group
           position={[17.117, 218.356, 23.591]}
           rotation={[-Math.PI / 2, 0, Math.PI]}

@@ -12,8 +12,8 @@
   "dependencies": {
     "@react-spring/three": "^9.7.3",
     "@react-three/cannon": "^6.6.0",
-    "@react-three/drei": "^7.5.1",
-    "@react-three/fiber": "^7.0.6",
+    "@react-three/drei": "^9.92.7",
+    "@react-three/fiber": "^8.15.12",
     "leva": "^0.9.35",
     "react": "^18.2.0",
     "react-color": "^2.19.3",
