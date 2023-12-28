@@ -1,49 +1,20 @@
-import { SketchPicker } from "react-color";
-import { useSnapshot } from "valtio";
-
-import state from "./Store";
 import { Canvas } from "@react-three/fiber";
-import scene from "./assets/ferrari.glb";
-import { Loader, OrbitControls, Sphere, useGLTF } from "@react-three/drei";
+import { Loader, OrbitControls, PresentationControls } from "@react-three/drei";
 import Model from "./Model";
-import { Suspense} from "react";
-
-const ColorPicker = () => {
-  const snap = useSnapshot(state);
-
-  return (
-    <div style={{position: 'absolute', top: "20px", right: 4}}>
-      <SketchPicker
-        color={snap.color}
-        disableAlpha
-        onChange={(color) => (state.color = color.hex)}
-      />
-    </div>
-  );
-};
-
-const Scene = () => {
-  const gltf = useGLTF(scene);
-  console.log(gltf);
-  return (
-    <mesh>
-      <Sphere />
-    </mesh>
-  );
-};
+import { Suspense } from "react";
+import CameraRig from "./Spider";
 
 const App = () => {
-
   return (
-    <>
         <Suspense fallback={<Loader />}>
-      <Canvas>
+    <Canvas fov={35}
+        near={0.01}
+        far={100}>
+
           <Model />
-      <OrbitControls />
-      </Canvas>
+          <OrbitControls />
+    </Canvas>
         </Suspense>
-      <ColorPicker />
-    </>
   );
 };
 
